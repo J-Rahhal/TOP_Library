@@ -6,20 +6,49 @@
 
 body {
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.952);
 }
 
 header {
     height: 10%;
-    border-bottom: 1px solid #000;
+    color: whitesmoke;
+    border-bottom:10px solid rgba(128, 128, 128, 0.664);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.856);
+}
+
+main {
+    height: 100%;
+}
+
+.buttons {
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+input[value="+ Add Book"] {
+    color: white;
+    height: 50%;
+    width: 10%;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+}
+
+input[value="+ Add Book"]:hover {
+    background-color: rgb(121, 120, 120);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 #grid-container {
     display: grid;
-    grid-template-columns: repeat(4,20%);
-    grid-template-rows: repeat(2 , 20%);
+    grid-template-columns: repeat(4,15%);
+    grid-template-rows: repeat(2 , 30%);
     height: 100%;
     margin-top: 50px;
     gap: 50px;
@@ -27,5 +56,43 @@ header {
 }
 
 .row {
-    border: 1px solid black;
+    border: 5px solid rgba(0, 0, 0, 0.281);
+    background-color: rgba(245, 245, 245, 0.918);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row > p {
+    font-size: 18px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    height: 35%;
+    width: 100%;
+
+}
+
+.button-group>input {
+    margin: 5px;
+    height: 100%;
+    align-self: stretch;
+    color: white;
+    font-size: 16px;
+}
+
+.button-group > input[value="Read"], input[value="Remove"] {
+    background-color: rgba(3, 102, 102, 0.616);
+    border: none;
+    border-radius: 10px;
+}
+
+.button-group > input[value="Remove"] {
+    background-color: rgba(0, 0, 0, 0.226)
 }
