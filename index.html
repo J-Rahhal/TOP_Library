@@ -28,6 +28,36 @@
 
         </div>
     </div>
+
+    <!--PopUp Form-->
+    <div id="form-container" class="relative w-full h-full">
+
+        <div id="form" class="left-0 right-0 m-auto bg-white w-1/2 p-8">
+            <div id="close-button" class="flex justify-end cursor-pointer">
+                <img src="src/img/icon-menu-close.svg" alt="close icon">
+            </div>
+            <form action="#" class="md:flex md:flex-col md:items-center">
+                <div id="form-title" class="flex justify-center">
+                    <h3 class="text-center text-black font-bold text-xl py-4">Add a Book</h3>
+                </div>
+                <div id="input-title" class="flex justify-center">
+                    <input type="text" name="book-title" id="book-title" placeholder="Title"
+                        class="p-2 rounded-full border-2 border-black" required>
+                </div>
+                <div id="input-author" class="py-8 flex justify-center">
+                    <input type="text" name="book-author" id="book-author" placeholder="Author"
+                        class="p-2 rounded-full border-2 border-black" required>
+                </div>
+                <div id="input-pages" class="pb-8 flex justify-center">
+                    <input type="number" name="book-pages" id="book-pages" placeholder="Pages"
+                        class="p-2 rounded-full border-2 border-black" required>
+                </div>
+                <div id="submit-button" class="flex justify-center">
+                    <button id="submit" class="text-center bg-cyan rounded-full p-2 px-12 md:px-12">Sumbit</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
