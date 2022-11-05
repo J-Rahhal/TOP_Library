@@ -7,4 +7,4 @@ This is Project is related to the Odin Project curriculum under the Full Stack J
 https://www.theodinproject.com/lessons/node-path-javascript-library
 This is a Project Library That is meant to implement Object oriented JavaScript Learned in the previously provided Lessons
 
-This project includes JavaScript & Tailwind Framework.
+This project includes CSS Grid layout JavaScript & Tailwind Framework.
