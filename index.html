@@ -11,14 +11,14 @@
 </head>
 
 <body class="bg-darkerGray">
-    <div id="grid-container" class="grid grid-cols-1 m-12 bg-darkGray gap-8">
+    <div id="grid-container" class="grid grid-cols-1 m-4 bg-darkGray gap-8 md:m-12">
          <!--Library header-->
          <div id="header" class="w-full flex justify-between border-b-2 p-4 ">
             <div id="logo" class="flex items-end">
-                <h1 class="text-3xl font-bold text-4xl text-white md:text-5xl">Library</h1>
+                <h1 class="text-3xl font-bold text-4xl text-white md:text-4xl lg:text-6xl">Library</h1>
             </div>
-            <div id="add-button" class="w-1/4 flex justify-end">
-                <button class="rounded-full p-4 bg-cyan w-full text-bold text-md md:p-2 md:text-xl">Add Book</button>
+            <div id="add-button" class="w-1/2 flex justify-end md:w-1/2">
+                <button class="rounded-full py-2 bg-cyan w-1/2 text-sm md:text-lg lg:w-1/2 lg:text-2xl">Add Book</button>
             </div>
         </div>
 
@@ -32,13 +32,13 @@
     <!--PopUp Form-->
     <div id="form-container" class="relative w-full h-full">
 
-        <div id="form" class="left-0 right-0 m-auto bg-white w-1/2 p-8">
+        <div id="form" class="left-0 right-0 m-auto bg-white w-3/4 p-8 md:w-1/2">
             <div id="close-button" class="flex justify-end cursor-pointer">
                 <img src="src/img/icon-menu-close.svg" alt="close icon">
             </div>
             <form action="#" class="md:flex md:flex-col md:items-center">
                 <div id="form-title" class="flex justify-center">
-                    <h3 class="text-center text-black font-bold text-xl py-4">Add a Book</h3>
+                    <h3 class="text-center text-black text-xl py-4">Add a Book</h3>
                 </div>
                 <div id="input-title" class="flex justify-center">
                     <input type="text" name="book-title" id="book-title" placeholder="Title"
@@ -55,7 +55,7 @@
                 <div id="input-checkbox" class="pb-8 flex justify-center">
                     <label for="book-status" class="pr-2">Have you read this book </label>
                     <input type="checkbox" name="book-status" id="book-status"
-                        class="p-2 rounded-full border-2 border-black" required>
+                        class="p-2 rounded-full border-2 border-black">
                 </div>
                 <div id="submit-button" class="flex justify-center">
                     <button id="submit" class="text-center bg-cyan rounded-full p-2 px-12 md:px-12">Sumbit</button>
