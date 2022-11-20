@@ -10,55 +10,40 @@
     <title>Library</title>
 </head>
 
-<body class="bg-darkerGray">
-    <div id="grid-container" class="grid grid-cols-1 m-4 bg-darkGray gap-8 md:m-12">
-         <!--Library header-->
-         <div id="header" class="w-full flex justify-between border-b-2 p-4 ">
-            <div id="logo" class="flex items-end">
-                <h1 class="text-3xl font-bold text-4xl text-white md:text-4xl lg:text-6xl">Library</h1>
-            </div>
-            <div id="add-button" class="w-1/2 flex justify-end md:w-1/2">
-                <button class="rounded-full py-2 bg-cyan w-1/2 text-sm md:text-lg lg:w-1/2 lg:text-2xl">Add Book</button>
+<body>
+    <div id="grid-container" class="w-full bg-brightGray md:h-screen">
+        <!--Library header-->
+        <div id="header" class="flex justify-between text-black border-b border-gray-600 h-fit">
+            <h1 class="text-3xl m-4 font-bold">Library</h1>
+            <div id="add-button" class="m-4">
+                <button class="rounded-full py-2 px-4 bg-eerieBlack text-brightGray">Add
+                    Book</button>
             </div>
         </div>
 
 
         <!--Shelf-->
-        <div id="shelf" class="grid grid-cols-1 md:grid-cols-4">
+        <div id="shelf" class="grid w-full h-screen justify-center md:grid-cols-3  md:gap-6 md:h-fit">
 
         </div>
-    </div>
 
-    <!--PopUp Form-->
-    <div id="form-container" class="relative w-full h-full">
-
-        <div id="form" class="left-0 right-0 m-auto bg-white w-3/4 p-8 md:w-1/2">
-            <div id="close-button" class="flex justify-end cursor-pointer">
-                <img src="src/img/icon-menu-close.svg" alt="close icon">
-            </div>
-            <form action="#" class="md:flex md:flex-col md:items-center">
-                <div id="form-title" class="flex justify-center">
-                    <h3 class="text-center text-black text-xl py-4">Add a Book</h3>
+        <!--PopUp Form-->
+        <div id="addBookForm" class="absolute bg-white m-auto w-1/2 left-0 right-0 top-1/2 md:w-1/2 lg:w-1/4 hidden">
+            <form action="#" method="GET" class="flex flex-col">
+                <input type="text" id="title" placeholder="Title" class="m-4 mt-6 px-2 border border-gray-400" required>
+                <input type="text" id="author" placeholder="Author" class="m-4 px-2 border border-gray-400" required>
+                <input type="number" id="pages" placeholder="Pages" class="m-4 px-2 border border-gray-400" required>
+                <div id="readBook" class="m-4 flex flex-col items-center ">
+                    <h4>Did you read this book?</h4>
+                    <div id="checkboxes">
+                        <label for="yes">Yes</label>
+                        <input type="radio" name="answer" id="yes" value="Read">
+                        <label for="no">No</label>
+                        <input type="radio" name="answer" id="no" value="Not Read">
+                    </div>
                 </div>
-                <div id="input-title" class="flex justify-center">
-                    <input type="text" name="book-title" id="book-title" placeholder="Title"
-                        class="p-2 rounded-full border-2 border-black" required>
-                </div>
-                <div id="input-author" class="py-8 flex justify-center">
-                    <input type="text" name="book-author" id="book-author" placeholder="Author"
-                        class="p-2 rounded-full border-2 border-black" required>
-                </div>
-                <div id="input-pages" class="pb-8 flex justify-center">
-                    <input type="number" name="book-pages" id="book-pages" placeholder="Pages"
-                        class="p-2 rounded-full border-2 border-black" required>
-                </div>
-                <div id="input-checkbox" class="pb-8 flex justify-center">
-                    <label for="book-status" class="pr-2">Have you read this book </label>
-                    <input type="checkbox" name="book-status" id="book-status"
-                        class="p-2 rounded-full border-2 border-black">
-                </div>
-                <div id="submit-button" class="flex justify-center">
-                    <button id="submit" class="text-center bg-cyan rounded-full p-2 px-12 md:px-12">Sumbit</button>
+                <div id="submit" class="flex justify-center text-white pb-4">
+                    <button class=" submit py-2 px-4 bg-gray-600 rounded-full">Submit</button>
                 </div>
             </form>
         </div>
