@@ -1,62 +1,86 @@
 /**
  * Variables
  */
- const addbutton = document.getElementById("add-button");
- const formContainer = document.getElementById("form-container");
- const submitButton = document.getElementById('submit-button');
- const closeButton = document.getElementById('close-button');
- const shelf = document.getElementById('shelf');
 
- /**
-  * Get values of input fields
-  */
-
- const bookTitle = document.getElementById('book-title');
- const bookAuthor = document.getElementById('book-author');
- const bookPages = document.getElementById('book-pages');
- const bookStatus = document.getElementById('book-status');
-
- /**
-  * add event listeners for buttons
-  */
- addbutton.addEventListener('click', popUp);
- closeButton.addEventListener('click', closePopUp);
- submitButton.addEventListener('click', addBook);
-
- /**
-  * Store books Objects in myLibrary array
-  */
- let myLibrary = [];
-
- /**
-  * Book Constructor
-  */
-
- function Book (title, author,pages, status) {
-     this.title = title;
-     this.author = author;
-     this.pages = pages;
-     this.status= status;
- }
-
-
- /**
-  * Create book object
-  */
- function addBook() {
-
- }
-
- /**
-  * display popUp form to add book object
-  */
- function popUp () {
-     formContainer.style.display = 'block';
- }
+let addButton = document.getElementById("add-button");
+let divForm = document.getElementById("addBookForm");
+let bookTitle = document.getElementById("title");
+let bookAuthor = document.getElementById("author");
+let bookPages = document.getElementById("pages");
+let submitButton = document.getElementById("submit");
+let radioyes = document.getElementById("yes");
+let radiono = document.getElementById("no");
+let main = document.getElementById("main");
 
 /**
- * close add book popUp
+ * empty book Array
  */
- function closePopUp() {
-     formContainer.style.display = 'none';
- }
+
+let myLibrary = [];
+
+/**
+ * Add Book on click event
+ */
+
+addButton.addEventListener('click', popUp);
+
+/**
+ * Display Form
+ */
+
+function popUp() {
+    divForm.classList.add('popUp');
+}
+
+
+/**
+ * Add book To array and empty fields after submittion
+ */
+
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (
+        bookTitle.value !== "" &&
+        bookAuthor.value !== "" &&
+        bookPages.value !== ""
+    ) {
+        addBookToLibrary();
+        bookTitle.value = "";
+        bookAuthor.value = "";
+        bookPages.value = "";
+    }
+});
+
+
+class Book {
+    constructor(id, title, author, pages, readingStatus) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.readingStatus = readingStatus;
+    }
+}
+
+function addBookToLibrary() {
+
+    let status = "";
+    if (radioyes.checked) {
+        status = "Read";
+    } else {
+        status = "Not Read";
+    }
+
+    /**create book object */
+
+    const book = new Book(
+        (id = Date.now()),
+        title.value,
+        author.value,
+        pages.value,
+        status
+    );
+
+    /**Push book to Library */
+    myLibrary.push(book);
+}
