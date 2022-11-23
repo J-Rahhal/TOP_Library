@@ -149,45 +149,24 @@ function addBooksTopage(myLibrary) {
 
         /**add bookDiv to main */
         main.appendChild(bookDiv);
-    });
-}
 
-main.addEventListener("click", () => {
-    let deleteButton = document.getElementsByClassName("delete-button");
-    for (let i = 0; i < deleteButton.length; i++) {
-        deleteButton[i].addEventListener("click", () => {
-            let bookDiv = document.querySelectorAll("[data-id]");
-            for (let j = 0; j < bookDiv.length; j++) {
-                bookDiv[j].style.display = "none";
-                deleteBook(bookDiv[j]);
+        /**update status*/
+        statusButton.addEventListener("click", () => {
+            if (statusButton.innerHTML === "Read") {
+                statusButton.innerHTML = "Not Read";
+                book.readingStatus = "Not Read";
+            } else {
+                statusButton.innerHTML = "Read";
+                book.readingStatus = "Read";
             }
         });
-    }
-    updateStatus();
-});
+        /**Delete book */
 
+        deleteButton.addEventListener("click", () => {
+            bookDiv.remove(deleteButton);
+            myLibrary.splice(myLibrary.indexOf(book.id), 1);
 
+        });
 
-
-
-
-function deleteBook(bookId) {
-    myLibrary = myLibrary.filter((book) => book.id === bookId);
-}
-
-function updateStatus() {
-    myLibrary.forEach((item) => {
-        let statusButton = document.getElementsByClassName("button-status");
-        for (let i = 0; i < statusButton.length; i++) {
-            statusButton[i].addEventListener("click", () => {
-                if (statusButton[i].innerText === "Read") {
-                    statusButton[i].innerText = "Not Read";
-                    item.readStatus = statusButton[i].innerHTML;
-                } else {
-                    statusButton[i].innerText = "Read";
-                    item.readStatus = statusButton[i].innerHTML;
-                }
-            });
-        }
     });
 }
